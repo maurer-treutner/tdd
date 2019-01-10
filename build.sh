@@ -22,3 +22,4 @@ mkdir -p $projectroot/build
 cd $projectroot/build 
 cmake -DCMAKE_PREFIX_PATH=$prefixdir ../dev 
 cmake --build .
+ctest --verbose
