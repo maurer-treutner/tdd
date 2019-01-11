@@ -22,6 +22,9 @@ using std::uint16_t;
 using std::string;
 
 string getRoman(uint16_t number);
+string getRomanHundreds(uint16_t number);
+string getRomanTens(uint16_t number);
 }
+
 
 #endif
