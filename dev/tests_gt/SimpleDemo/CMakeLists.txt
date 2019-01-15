@@ -15,3 +15,7 @@ target_link_libraries(test_SimpleDemo
 )
 
 add_test(SimpleDemo test_SimpleDemo COMMAND test_SimpleDemo)
+
+cxx_test(mytestsuite 
+    ${CMAKE_CURRENT_SOURCE_DIR}/test_cxg/mytestsuite.h
+)
