@@ -30,5 +30,4 @@ enable_testing()
 include_directories(${CMAKE_PREFIX_PATH}/include)
 include_directories(${CXXTEST_PATH})
 
-add_subdirectory(SimpleTest)
-add_subdirectory(SimpleDemo)
+add_subdirectory(01_SimpleDemo)
