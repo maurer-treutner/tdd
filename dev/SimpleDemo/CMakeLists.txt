@@ -18,7 +18,8 @@ target_link_libraries(test_SimpleDemo
     ${GTEST_BOTH_LIBRARIES}
 )
 
-add_test(SimpleDemo test_SimpleDemo COMMAND test_SimpleDemo)
+add_test(NAME test_SimpleDemo COMMAND test_SimpleDemo)
+
 
 #
 # tests using CxxTest
@@ -34,3 +35,21 @@ target_include_directories(testsuite_romannumber PRIVATE include
 target_link_libraries(testsuite_romannumber
     SimpleDemo
 )
+
+#
+# tests using boost.test
+#
+add_executable(test_SimpleDemo_boost
+    test_bst/test_romannumber.cxx
+)
+
+target_include_directories(test_SimpleDemo_boost
+    PRIVATE include
+)
+
+target_link_libraries(test_SimpleDemo_boost
+    ${Boost_LIBRARIES}
+    SimpleDemo
+)
+
+add_test(NAME test_SimpleDemo_boost COMMAND test_SimpleDemo_boost --report_level=detailed)

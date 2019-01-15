@@ -25,6 +25,6 @@ cmake --build .
 mkdir -p $projectroot/build
 
 cd $projectroot/build 
-cmake --trace -DCMAKE_PREFIX_PATH=$prefixdir ../dev
+cmake -DCMAKE_PREFIX_PATH=$prefixdir ../dev
 cmake --build .
 ctest --verbose

@@ -1,11 +1,29 @@
 cmake_minimum_required(VERSION 3.10)
 project(tdd LANGUAGES CXX)
 
+#
+# The following lines are required for Google Test
+#
+find_package(GTest REQUIRED)
+find_package(Threads REQUIRED)
 
+#
+# The following lines are required for CxxTest
+#
 set(CXXTEST_PATH "${CMAKE_PREFIX_PATH}/CxxTest/")
 set(CXXTEST_CMAKE "${CXXTEST_PATH}/build_tools/cmake/CxxTest.cmake")
-
 include ("${CXXTEST_CMAKE}")
+
+#
+# The following lines are required for boost.test
+#
+# Please note: boost is not installed as an external project in this repository
+#   It has to be installed on the build system. Unter Debian/Ubuntu please type
+#       > sudo apt-get install libboost-test-dev
+#   Under Windows...
+#
+set(Boost_USE_STATIC_LIBS OFF)
+find_package(Boost COMPONENTS unit_test_framework REQUIRED)
 
 enable_testing()
 
@@ -13,5 +31,4 @@ include_directories(${CMAKE_PREFIX_PATH}/include)
 include_directories(${CXXTEST_PATH})
 
 add_subdirectory(SimpleTest)
-# tests_gt contains examples using gtest/gmock library
-add_subdirectory(tests_gt)
+add_subdirectory(SimpleDemo)
