@@ -31,3 +31,4 @@ include_directories(${CMAKE_PREFIX_PATH}/include)
 include_directories(${CXXTEST_PATH})
 
 add_subdirectory(01_SimpleDemo)
+add_subdirectory(02_Fixtures)

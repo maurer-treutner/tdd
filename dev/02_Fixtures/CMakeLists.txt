@@ -1,7 +1,7 @@
-set(TARGET_NAME "SimpleDemo")
+set(TARGET_NAME "roman")
 
 add_library(${TARGET_NAME}
-    src/romannumber.cxx
+    src/RomanNumber.cxx
 )
 
 target_include_directories(${TARGET_NAME} PUBLIC include )
