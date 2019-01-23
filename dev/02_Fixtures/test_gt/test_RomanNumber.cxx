@@ -81,6 +81,8 @@ TEST_F(test_RomanNumber,asignment)
     for (const auto testdata : valid_values_)
     {
         myNumber = RomanNumber(testdata.first);
+        ASSERT_EQ(myNumber.getValue(),testdata.first);
+        ASSERT_EQ(myNumber.toString(),testdata.second);
     }
 }
 

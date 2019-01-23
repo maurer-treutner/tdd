@@ -62,4 +62,53 @@ BOOST_FIXTURE_TEST_SUITE(test_RomanNumber,RomanNumberFixture)
 
     }
 
+    BOOST_AUTO_TEST_CASE(test_toString)
+    {        
+        for (const auto testdata : valid_values_)
+        {
+            RomanNumber rm(testdata.first);
+            BOOST_TEST(rm.toString()==testdata.second);
+        }
+        RomanNumber rm{0};
+        BOOST_TEST(rm.toString().empty());
+    }
+
+    BOOST_AUTO_TEST_CASE(test_assignment)
+    {
+        RomanNumber myNumber(7);
+       BOOST_TEST(myNumber.toString()=="vii");
+        for (const auto testdata : valid_values_)
+        {
+            myNumber = RomanNumber(testdata.first);
+            BOOST_TEST(myNumber.getValue()==testdata.first);
+            BOOST_TEST(myNumber.toString()==testdata.second);
+        }
+    }
+
+    BOOST_AUTO_TEST_CASE(test_comparison)
+    {
+        RomanNumber myNumber1(1234);
+        RomanNumber myNumber2(1234);
+        BOOST_TEST((myNumber1==myNumber2)); // etra bracket required becaus construction of macro BOOST_TEST
+        myNumber1 = 2345;
+        RomanNumber myNumber3(2345);
+        BOOST_TEST((myNumber1==myNumber3));
+        BOOST_TEST(!(myNumber2==myNumber1));
+    }
+
+    BOOST_AUTO_TEST_CASE(test_minus)
+    {
+        RomanNumber num1(47), num2(46);
+        num1 -= num2;
+        BOOST_TEST(num1.getValue(),1);
+        BOOST_REQUIRE_THROW(num1-=num2,std::range_error);
+        BOOST_TEST(0==(num2-=46).getValue());
+
+        auto res = RomanNumber(10)-RomanNumber(5);
+        BOOST_TEST((res==5));
+        BOOST_REQUIRE_THROW(res = RomanNumber(5)-RomanNumber(10),std::range_error);
+    }
+
+
+
 BOOST_AUTO_TEST_SUITE_END()

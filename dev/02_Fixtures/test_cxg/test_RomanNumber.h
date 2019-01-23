@@ -52,6 +52,8 @@ public:
         for (const auto testdata : valid_values_)
         {
             myNumber = RomanNumber(testdata.first);
+            TS_ASSERT_EQUALS(myNumber.getValue(), testdata.first);
+            TS_ASSERT_EQUALS(myNumber.toString(), testdata.second);
         }
     }
 
