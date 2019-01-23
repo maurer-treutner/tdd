@@ -2,10 +2,18 @@ cmake_minimum_required(VERSION 3.10)
 project(tdd LANGUAGES CXX)
 
 #
-# The following lines are required for Google Test
+# The following lines are required for GTest
 #
 find_package(GTest REQUIRED)
 find_package(Threads REQUIRED)
+
+#
+# The following lines are required for GMock 
+#
+# since there is no find_package for GMock, we get the libname from GTEST info
+get_filename_component(GTEST_LIB_DIR ${GTEST_LIBRARIES} DIRECTORY)
+find_library(GMOCK_LIBRARIES gmock PATHS ${GTEST_LIB_DIR})
+
 
 #
 # The following lines are required for CxxTest
@@ -32,3 +40,4 @@ include_directories(${CXXTEST_PATH})
 
 add_subdirectory(01_SimpleDemo)
 add_subdirectory(02_Fixtures)
+add_subdirectory(03_Mocking)
