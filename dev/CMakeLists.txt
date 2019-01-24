@@ -40,4 +40,6 @@ include_directories(${CXXTEST_PATH})
 
 add_subdirectory(01_SimpleDemo)
 add_subdirectory(02_Fixtures)
-add_subdirectory(03_Mocking)
+add_subdirectory(03_Stubs)
+# add_subdirectory(04_Faking)
+add_subdirectory(05_Mocking)
