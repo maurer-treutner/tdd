@@ -1,5 +1,19 @@
-To use docker, change to the root directory of the project and build the docker image:
-	$ docker build -t tdd_sample .
+The docker image of this project is based on Ubuntu linux v. 18.04. 
 
-To run complete make under docker, call under unix opertaing systems:
+Build the docker image on your local machine using the Dockerfile in this directory.
+To do so, open a terminal/power shell, change to the root directory of the project
+and call 
+
+	docker build -t tdd_sample .
+
+Unix:
+------
+
+To run complete make under docker, call:
 	$ docker run --rm -v $(pwd):/project tdd_sample
+
+Windows:
+--------
+Please note, that you have to share the drive where these sources are stored in docker settings.
+If you stored the sources under c:/work/tdd, you can run complete make under calling:
+	> docker run --rm -v c:/work/tdd:/project tdd_sample
