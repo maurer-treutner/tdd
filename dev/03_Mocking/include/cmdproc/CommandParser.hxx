@@ -22,25 +22,24 @@ namespace cmdproc{
     class CommandParser
     {
     public:
+        using Ptr = std::shared_ptr<CommandParser>;
         using Listener = CommandListener;
         using Processor = CommandProcessor;
 
         CommandParser(const Listener::Ptr& listener,const Processor::Ptr& processor);
         virtual ~CommandParser()=default;
 
-        // virtual bool processNextCommand();
+        virtual bool processNextCommand();
 
-        Listener& getListener()
-        {
-            return *listener_;
-        }
+    protected:
+        std::vector<std::string> tokenize(std::string& s);
 
     private:
-        const std::map<std::string,Command> commandMap=
+        const std::map<std::string,Command> commandMap_=
         {
-            std::make_pair("Hello",Command::HELLO),
-            std::make_pair("GetName",Command::GET_NAME),
-            std::make_pair("Exit",Command::EXIT)
+            std::make_pair("HELLO",Command::HELLO),
+            std::make_pair("GETNAME",Command::GET_NAME),
+            std::make_pair("EXIT",Command::EXIT)
         };
 
         Listener::Ptr listener_;
