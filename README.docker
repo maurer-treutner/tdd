@@ -1,8 +1,5 @@
 To use docker, change to the root directory of the project and build the docker image:
 	$ docker build -t tdd_sample .
 
-Before starting the docker image, create a docker volue:
-	$ docker volume create vol_tdd_sample
-
-To run complete make under docker, call 
-	$ docker run --rm -v vol_tdd_sample=/project tdd_sample
+To run complete make under docker, call under unix opertaing systems:
+	$ docker run --rm -v $(pwd):/project tdd_sample
