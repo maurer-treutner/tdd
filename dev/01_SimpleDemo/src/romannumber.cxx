@@ -2,7 +2,6 @@
  * @file romannumber.cxx
  * @author Peter Maurer (p.maurer@maurer-treutner.de)
  * @brief Implementation of functions for handling of roman numbers
- * @date 2019-01-10
  * 
  * @copyright Copyright (c) 2019 Maurer & Treutner GmbH & Co. KG
  * 
