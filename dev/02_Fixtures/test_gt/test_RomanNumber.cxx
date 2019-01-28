@@ -9,7 +9,7 @@
  */
 #include "roman/RomanNumber.hxx"
 
-#include "gtest/gtest.h"
+#include <gtest/gtest.h>
 
 #include <map>
 #include <functional>
