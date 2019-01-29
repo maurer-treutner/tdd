@@ -117,3 +117,10 @@ TEST_F(test_RomanNumber,minusOp)
     ASSERT_TRUE(res==5);
     ASSERT_THROW(res = RomanNumber(5)-RomanNumber(10),std::range_error);
 }
+
+/* This is to demonstrate output for failing test
+TEST_F(test_RomanNumber,failureSmp)
+{
+    ASSERT_TRUE(false);
+}
+*/

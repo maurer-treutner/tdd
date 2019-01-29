@@ -5,12 +5,14 @@ set(TEST_NAME "test_${TARGET_NAME}_gtest")
 
 add_executable(${TEST_NAME}
     test_Fraction.cxx
+    test_Brightness.cxx
 )
 
 target_link_libraries(${TEST_NAME}
     ${TARGET_NAME}
     Threads::Threads
     ${GTEST_BOTH_LIBRARIES}
+    ${GMOCK_LIBRARIES}
 )
 
 add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
