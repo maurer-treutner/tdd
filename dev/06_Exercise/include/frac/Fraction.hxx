@@ -17,9 +17,28 @@ namespace frac
 class Fraction
 {
 public:
-    using ValueType = uint64_t;
+//    using ValueType = uint64_t;
+    using ValueType = int64_t;
 
-    Fraction();
+
+    Fraction()=default;
+
+    Fraction(ValueType num, ValueType den):
+        num_(num),
+        den_(den)
+    {}
+
+    double getFloating() const;
+
+    Fraction& operator += (const Fraction& rhs);
+
+    Fraction& operator -= (const Fraction& rhs);
+    
+    Fraction operator + (const Fraction& rhs) const
+    {return Fraction();}
+
+    Fraction operator - (const Fraction& rhs) const
+    {return Fraction();}
 
 private:
     ValueType num_=0; // numerator
