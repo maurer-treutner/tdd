@@ -1,6 +1,8 @@
 pipeline{
     agent any
-
+    environment{
+        GTEST_OUTPUT="xml:${pwd}/reports"
+    }
     stages {
         stage('Build_Ext')
         {
@@ -22,7 +24,8 @@ pipeline{
                 echo 'Testing...'
                 ctest([
                     installation:'Default',
-                    workingDir:'build'
+                    workingDir:'build',
+                    arguments:
                 ])
             }
         }

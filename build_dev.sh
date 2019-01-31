@@ -11,8 +11,10 @@ set -x
 projectroot=$(pwd)
 builddir=$projectroot/build
 prefixdir=$projectroot/prefix
+reportdir=$projectroot/reports
 
 mkdir -p $builddir
+mkdir -p $reportdir
 
 cd $projectroot/build 
 cmake -DCMAKE_PREFIX_PATH=$prefixdir ../dev
