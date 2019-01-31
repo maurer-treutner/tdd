@@ -7,7 +7,7 @@ pipeline{
             steps{
                 echo 'Building...'
                 sh "cmake --version"
-                echo '${workspace}'
+                echo '$(workspace)'
             }
         }
         stage('Test')
