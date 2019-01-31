@@ -1,18 +1,19 @@
 pipeline{
     agent any
 
-    environment{
-        workspace = pwd()
-        FOO = "foo"
-    }
-
     stages {
         stage('Build')
         {
             steps{
                 echo 'Building...'
-                sh "cmake --version"
-                echo '$(FOO)'
+                sh "md -p build"
+                sh "md -p ext/build"
+                sh "md -p prefix"
+                cmakeBuild([
+                    buildDir: 'ext/build'
+                    sourceDir: 'ext'
+                    cmakeArgs: '-Dprefix'
+                ])
             }
         }
         stage('Test')
