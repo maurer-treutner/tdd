@@ -3,6 +3,7 @@
 build/*
 ext/build/*
 prefix/*
+jenkins/jenkins_home/*
 
 #ignore .vscode directory
 .vscode/*
