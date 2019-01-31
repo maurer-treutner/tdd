@@ -12,7 +12,7 @@ pipeline{
                 cmakeBuild([
                     buildDir: 'ext/build',
                     sourceDir: 'ext',
-                    cmakeArgs: '-Dprefix'
+                    cmakeArgs: '-Dprefix',
                     installation: 'cmake in search path'
                 ])
             }
