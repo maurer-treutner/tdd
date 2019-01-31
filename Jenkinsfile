@@ -6,7 +6,7 @@ pipeline{
             steps{
                 echo 'Building...'
                 sh "cmake --version"
-                sg "./build.sh"
+                sh "./build.sh"
             }
         }
         stage('Test')
