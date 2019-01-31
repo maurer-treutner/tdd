@@ -24,8 +24,7 @@ pipeline{
                 echo 'Testing...'
                 ctest([
                     installation:'Default',
-                    workingDir:'build',
-                    arguments:
+                    workingDir:'build'
                 ])
             }
         }
