@@ -13,7 +13,7 @@ pipeline{
                     buildDir: 'ext/build',
                     sourceDir: 'ext',
                     cmakeArgs: '-Dprefix',
-                    installation: 'cmake in search path'
+                    installation: 'Default'
                 ])
             }
         }
