@@ -6,9 +6,9 @@ pipeline{
         {
             steps{
                 echo 'Building...'
-                sh "md -p build"
-                sh "md -p ext/build"
-                sh "md -p prefix"
+                sh "mkdir -p build"
+                sh "mkdir -p ext/build"
+                sh "mkdir -p prefix"
                 cmakeBuild([
                     buildDir: 'ext/build',
                     sourceDir: 'ext',
