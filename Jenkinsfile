@@ -6,7 +6,7 @@ pipeline{
             steps{
                 echo 'Building...'
                 sh "cmake --version"
-                sh "echo $(pwd)"
+                sg "./build.sh"
             }
         }
         stage('Test')
