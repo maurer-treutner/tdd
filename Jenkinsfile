@@ -3,6 +3,7 @@ pipeline{
 
     environment{
         workspace = pwd()
+        FOO = "foo"
     }
 
     stages {
@@ -11,7 +12,7 @@ pipeline{
             steps{
                 echo 'Building...'
                 sh "cmake --version"
-                echo '${workspace}'
+                echo '${FOO}'
             }
         }
         stage('Test')
