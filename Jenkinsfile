@@ -6,6 +6,7 @@ pipeline{
             steps{
                 echo 'Building...'
                 sh "cmake --version"
+                sh "pwd" 
             }
         }
         stage('Test')
