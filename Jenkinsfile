@@ -3,6 +3,7 @@ pipeline{
 
     stages {
         stage('Build')
+        {
             def workspace = pwd()
             steps{
                 echo 'Building...'
