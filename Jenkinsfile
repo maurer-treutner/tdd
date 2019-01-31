@@ -12,7 +12,7 @@ pipeline{
                 cmake([
                     installation: "Default",
                     workingDir: "ext/build",
-                    arguments: "-DINSTALL_PATH=prefix -P dev"
+                    arguments: "-DINSTALL_PATH=prefix .."
                 ])
             }
         }
