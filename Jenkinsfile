@@ -10,8 +10,8 @@ pipeline{
                 sh "md -p ext/build"
                 sh "md -p prefix"
                 cmakeBuild([
-                    buildDir: 'ext/build'
-                    sourceDir: 'ext'
+                    buildDir: 'ext/build',
+                    sourceDir: 'ext',
                     cmakeArgs: '-Dprefix'
                 ])
             }
