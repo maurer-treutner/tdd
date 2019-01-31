@@ -14,6 +14,8 @@ pipeline{
                     sourceDir: 'ext',
                     cmakeArgs: '-DINSTALL_PATH=prefix',
                     installation: 'Default'
+                    steps: [[],
+                    [withCmake : true]]
                 ])
             }
         }
