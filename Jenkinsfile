@@ -13,7 +13,7 @@ pipeline{
                     buildDir: 'ext/build',
                     sourceDir: 'ext',
                     cmakeArgs: '-DINSTALL_PATH=prefix',
-                    installation: 'Default'
+                    installation: 'Default',
                     steps: [[],
                     [withCmake : true]]
                 ])
