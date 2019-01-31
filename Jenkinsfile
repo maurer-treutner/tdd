@@ -9,13 +9,10 @@ pipeline{
                 sh 'mkdir -p build'
                 sh 'mkdir -p ext/build'
                 sh 'mkdir -p prefix'
-                cmakeBuild([
-                    buildDir: 'ext/build',
-                    sourceDir: 'ext',
-                    cmakeArgs: '-DINSTALL_PATH=prefix',
-                    installation: 'Default',
-                    steps: [[],
-                    [withCmake : true]]
+                cmake([
+                    installation: "Default",
+                    workingDir: "ext/build",
+                    arguments: "-DINSTALL_PATH=prefix -P dev"
                 ])
             }
         }
