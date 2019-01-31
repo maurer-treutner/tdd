@@ -12,7 +12,7 @@ pipeline{
             steps{
                 echo 'Building...'
                 sh "cmake --version"
-                echo '${FOO}'
+                echo '$(FOO)'
             }
         }
         stage('Test')
