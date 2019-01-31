@@ -1,10 +1,11 @@
 pipeline{
     agent any
+    node{
+        def workspace = pwd()
 
     stages {
         stage('Build')
         {
-            def workspace = pwd()
             steps{
                 echo 'Building...'
                 sh "cmake --version"
@@ -23,5 +24,6 @@ pipeline{
                 echo 'Depoloying...'
             }
         }
+    }
     }
 }
