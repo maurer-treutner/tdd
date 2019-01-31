@@ -2,11 +2,12 @@ pipeline{
     agent any
 
     stages {
-        stage('Build'){
+        stage('Build')
+            def workspace = pwd()
             steps{
                 echo 'Building...'
                 sh "cmake --version"
-                sh "./build.sh"
+                echo '${workspace}'
             }
         }
         stage('Test')
