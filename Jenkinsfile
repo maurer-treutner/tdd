@@ -6,7 +6,7 @@ pipeline{
         {
             steps{
                 echo 'Building...'
-                sh "./build.sh"
+                sh "./build_ext.sh"
             }
         }
         stage('Test')
