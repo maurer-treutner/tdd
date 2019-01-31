@@ -14,6 +14,11 @@ pipeline{
                     workingDir: "ext/build",
                     arguments: "-DINSTALL_PATH=prefix .."
                 ])
+                cmake([
+                    installation: "Default",
+                    workingDir: "ext/Build",
+                    arguments: "--build ."
+                ])
             }
         }
         stage('Test')
