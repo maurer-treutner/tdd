@@ -20,6 +20,10 @@ pipeline{
         {
             steps{
                 echo 'Testing...'
+                ctest([
+                    installation:'Default',
+                    workingDir:'build'
+                ])
             }
         }
         stage('Deploy')
