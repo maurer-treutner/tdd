@@ -1,0 +1,13 @@
+The docker image for our demo server is based on jenkins lts docker image.
+
+To run the create the local docker image, cd to this directory and enter
+
+# docker build -t testjenk .
+
+To run this image under unix enter
+
+# docker run -v $(pwd)/jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 testjenk
+
+To run it under windows enter in admin command shell
+
+> docker run -v c:\work\tdd\jenkins\jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 testjenk
