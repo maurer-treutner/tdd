@@ -15,7 +15,8 @@ reportdir=$projectroot/reports
 
 mkdir -p $builddir
 mkdir -p $reportdir
+rm -rf $reportdir/*.xml
 
 cd $projectroot/build 
-cmake -DCMAKE_PREFIX_PATH=$prefixdir ../dev
+cmake -DCMAKE_PREFIX_PATH=$prefixdir ../dev -DCTEST_REPORT_PATH=$reportdir
 cmake --build .

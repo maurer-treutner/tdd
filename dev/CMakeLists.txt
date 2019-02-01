@@ -21,6 +21,7 @@ find_library(GMOCK_LIBRARIES gmock PATHS ${GTEST_LIB_DIR})
 set(CXXTEST_PATH "${CMAKE_PREFIX_PATH}/CxxTest/")
 set(CXXTEST_CMAKE "${CXXTEST_PATH}/build_tools/cmake/CxxTest.cmake")
 include ("${CXXTEST_CMAKE}")
+set(GTEST_FLAGS "--gtest_output=xml:${CTEST_REPORT_PATH}/")
 
 #
 # The following lines are required for boost.test
