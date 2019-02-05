@@ -9,3 +9,4 @@ RUN apt-get install -y cmake
 RUN apt-get install -y git
 RUN apt-get install -y libboost-test-dev
 RUN apt-get install -y python
+RUN apt-get install -y cppcheck

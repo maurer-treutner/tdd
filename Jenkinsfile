@@ -18,6 +18,13 @@ pipeline{
                 sh "./build_dev.sh"
             }
         }
+        stage('Check')
+        {
+            steps{
+                echo 'Check with cppcheck'
+                sh "cd build && cppcheck --project=compile_commands.json --xml"
+            }
+        }
         stage('Test')
         {
             steps{
