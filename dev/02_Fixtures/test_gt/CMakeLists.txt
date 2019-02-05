@@ -13,8 +13,4 @@ target_link_libraries(${TEST_NAME}
     ${GTEST_BOTH_LIBRARIES}
 )
 
-<<<<<<< HEAD
-add_test(NAME ${TARGET_NAME} COMMAND ${TEST_NAME})
-=======
 add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME} ${GTEST_FLAGS})
->>>>>>> master
