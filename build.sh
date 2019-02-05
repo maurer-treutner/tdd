@@ -24,12 +24,6 @@ projectroot=$(pwd)
 
 # mkdir -p $projectroot/build
 
-<<<<<<< HEAD
-cd $projectroot/build 
-cmake -DCMAKE_PREFIX_PATH=$prefixdir ../dev
-cmake --build .
-ctest --verbose
-=======
 # cd $projectroot/build 
 # cmake -DCMAKE_PREFIX_PATH=$prefixdir ../dev
 # cmake --build .
@@ -37,4 +31,3 @@ ctest --verbose
 ./build_ext.sh
 ./build_dev.sh
 cd $projectroot/build && ctest --verbose
->>>>>>> master
