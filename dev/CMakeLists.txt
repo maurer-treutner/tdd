@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.7)
 project(tdd LANGUAGES CXX)
 
 #
@@ -21,6 +21,7 @@ find_library(GMOCK_LIBRARIES gmock PATHS ${GTEST_LIB_DIR})
 set(CXXTEST_PATH "${CMAKE_PREFIX_PATH}/CxxTest/")
 set(CXXTEST_CMAKE "${CXXTEST_PATH}/build_tools/cmake/CxxTest.cmake")
 include ("${CXXTEST_CMAKE}")
+set(GTEST_FLAGS "--gtest_output=xml:${CTEST_REPORT_PATH}/")
 
 #
 # The following lines are required for boost.test
@@ -43,4 +44,4 @@ add_subdirectory(02_Fixtures)
 add_subdirectory(03_Stubs)
 add_subdirectory(04_Faking)
 add_subdirectory(05_Mocking)
-add_subdirectory(06_Exercise)
+# add_subdirectory(06_Exercise)

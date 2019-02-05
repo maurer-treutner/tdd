@@ -9,22 +9,32 @@ set -e
 set -x
 
 projectroot=$(pwd)
-builddir=$projectroot/build
-extbuilddir=$projectroot/ext/build
-prefixdir=$projectroot/prefix
-echo "projectroot= $projectroot"
+# builddir=$projectroot/build
+# extbuilddir=$projectroot/ext/build
+# prefixdir=$projectroot/prefix
+# echo "projectroot= $projectroot"
 
-mkdir -p $extbuilddir
-mkdir -p $prefixdir
-mkdir -p $builddir
+# mkdir -p $extbuilddir
+# mkdir -p $prefixdir
+# mkdir -p $builddir
 
-cd $projectroot/ext/build
-cmake -DINSTALL_PATH=$prefixdir ..
-cmake --build .
+# cd $projectroot/ext/build
+# cmake -DINSTALL_PATH=$prefixdir ..
+# cmake --build .
 
-mkdir -p $projectroot/build
+# mkdir -p $projectroot/build
 
+<<<<<<< HEAD
 cd $projectroot/build 
 cmake -DCMAKE_PREFIX_PATH=$prefixdir ../dev
 cmake --build .
 ctest --verbose
+=======
+# cd $projectroot/build 
+# cmake -DCMAKE_PREFIX_PATH=$prefixdir ../dev
+# cmake --build .
+# ctest --verbose
+./build_ext.sh
+./build_dev.sh
+cd $projectroot/build && ctest --verbose
+>>>>>>> master

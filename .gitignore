@@ -3,6 +3,10 @@
 build/*
 ext/build/*
 prefix/*
+reports/*
+bamboo/bamboo_home/*
+jenkins/jenkins_home/*
+
 
 #ignore .vscode directory
 .vscode/*

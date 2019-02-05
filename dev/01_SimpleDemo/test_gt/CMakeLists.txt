@@ -13,4 +13,4 @@ target_link_libraries(${TEST_NAME}
     ${GTEST_BOTH_LIBRARIES}
 )
 
-add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
+add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME} ${GTEST_FLAGS})
