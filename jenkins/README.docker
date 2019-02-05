@@ -11,3 +11,11 @@ To run this image under unix enter
 To run it under windows enter in admin command shell
 
 > docker run -d -v c:\work\tdd\jenkins\jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 --name jenkins testjenk
+
+To stop the image enter:
+
+# docker stop jenkins
+
+To restart the image enter
+
+# docker restart jenkins

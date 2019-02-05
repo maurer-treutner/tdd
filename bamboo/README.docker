@@ -3,6 +3,14 @@ To build the docker image, please run in this directory:
 # docker build -t testbamboo .
 
 
-To execute the docker image under unix, please run:
+To execute the docker image under unix, please create local directory ./bamboo_home and run:
 
 # docker run -d -v $(pwd)/bamboo_home:/var/atlassian/application-data/bamboo --name="bamboo" --init -p 54663:54663 -p 8085:8085 testbamboo
+
+To stop the image enter
+
+# docker stop bamboo
+
+To restart the image enter
+
+# docker restart bamboo
