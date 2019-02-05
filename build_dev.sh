@@ -18,5 +18,5 @@ mkdir -p $reportdir
 rm -rf $reportdir/*.xml
 
 cd $projectroot/build 
-cmake -DCMAKE_PREFIX_PATH=$prefixdir ../dev -DCTEST_REPORT_PATH=$reportdir
+cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_PREFIX_PATH=$prefixdir ../dev -DCTEST_REPORT_PATH=$reportdir
 cmake --build .
