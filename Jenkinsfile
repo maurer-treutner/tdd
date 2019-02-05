@@ -22,7 +22,8 @@ pipeline{
         {
             steps{
                 echo 'Check with cppcheck'
-                sh "cd build && cppcheck --project=compile_commands.json --xml"
+                sh "cd build && cppcheck --project=compile_commands.json --xml >> ../cppcheck.xml"
+                cppcheck cppcheck.xml
             }
         }
         stage('Test')
